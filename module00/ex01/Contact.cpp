@@ -1,4 +1,4 @@
-#include "Contact.class.h"
+// #include "Contact.class.h"
 
 // void	Contact::set_data(size_t index) {
 // 	std::string	name;

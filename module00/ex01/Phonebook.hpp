@@ -1,7 +1,7 @@
-#ifndef PHONEBOOK_CLASS_H
-#define PHONEBOOK_CLASS_H
+#ifndef PHONEBOOK_HPP
+#define PHONEBOOK_HPP
 
-#include "Contact.class.h"
+#include "Contact.hpp"
 
 class		Phonebook {
 	Contact	contact[8];
