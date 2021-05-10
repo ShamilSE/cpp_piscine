@@ -69,7 +69,7 @@ void	print_available_contacts(Contact contact[8])
 	std::string	string = "";
 
 	std::cout << "     index|first name| last name|  nickname|" << std::endl;
-	while (index < contacts_count(contact))
+	while (index < contacts_count(contact) - 1)
 	{
 		print_spaces("9");
 		std::cout << index;
