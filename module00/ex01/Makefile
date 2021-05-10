@@ -1,5 +1,5 @@
 NAME = phonebook
-SRC = phonebook.cpp phonebook_utils.cpp
+SRC = phonebook.cpp phonebook_utils.cpp Contact.cpp
 all: $(NAME)
 $(NAME): $(SRC) *.hpp
 	clang++ -Wall -Wextra -Werror -o $(NAME) $(SRC) -g

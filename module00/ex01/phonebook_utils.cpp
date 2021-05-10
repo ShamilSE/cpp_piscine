@@ -81,19 +81,39 @@ void	print_available_contacts(Contact contact[8])
 	}
 }
 
-void	print_contact_info(Contact contact)
+void	print_more_contact_info(Contact contact[8])
 {
-	std::cout <<  "name - " << contact.get_name() << std::endl;
-	std::cout << "last name - " << contact.get_last_name() << std::endl;
-	std::cout << "nickname - " << contact.get_nickname() << std::endl;
-	std::cout << "login - " << contact.get_login() << std::endl;
-	std::cout << "post - " << contact.get_post() << std::endl;
-	std::cout << "email - " << contact.get_email() << std::endl;
-	std::cout << "phone - " << contact.get_phone() << std::endl;
-	std::cout << "birthday - " << contact.get_birthday() << std::endl;
-	std::cout << "favorite meal - " << contact.get_fav_meal() << std::endl;
-	std::cout << "underwear color - " << contact.get_underwear_color() << std::endl;
-	std::cout << "secret - " << contact.get_secret() << std::endl;
+	std::string	command;
+	size_t	index;
+	size_t	empty;
+
+	std::cout << "\nEnter index of interested contact or BACK" << std::endl;
+	if (!std::getline(std::cin, command))
+		exit(0);
+	if (!command.compare("BACK"))
+		return ;
+	if (!check_integer(command))
+	{
+		std::cout << "Incorrect index" << std::endl;
+		return ;
+	}
+	index = std::stoi(command, &empty, 10);
+	if (index > contacts_count(contact) - 1)
+	{
+		std::cout << "Incorrect index" << std::endl;
+		return ;
+	}
+	std::cout <<  "name - " << contact[index].get_name() << std::endl;
+	std::cout << "last name - " << contact[index].get_last_name() << std::endl;
+	std::cout << "nickname - " << contact[index].get_nickname() << std::endl;
+	std::cout << "login - " << contact[index].get_login() << std::endl;
+	std::cout << "post - " << contact[index].get_post() << std::endl;
+	std::cout << "email - " << contact[index].get_email() << std::endl;
+	std::cout << "phone - " << contact[index].get_phone() << std::endl;
+	std::cout << "birthday - " << contact[index].get_birthday() << std::endl;
+	std::cout << "favorite meal - " << contact[index].get_fav_meal() << std::endl;
+	std::cout << "underwear color - " << contact[index].get_underwear_color() << std::endl;
+	std::cout << "secret - " << contact[index].get_secret() << std::endl;
 }
 
 bool	check_integer(std::string command)
@@ -103,4 +123,18 @@ bool	check_integer(std::string command)
 	if (command[0] >= '0' && command[0] <= '9')
 		return true;
 	return false;
+}
+
+std::string	prompt(Contact contact[8])
+{
+	std::string	command;
+
+	std::cout << "Enter a command from following:" << std::endl;
+	if (contacts_count(contact) < 8)
+		std::cout << "ADD" << std::endl;
+	std::cout << "SEARCH" << std::endl;
+	std::cout << "EXIT" << std::endl << std::endl;
+	if (!std::getline(std::cin, command))
+		exit(0);
+	return command;
 }
