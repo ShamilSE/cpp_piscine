@@ -3,7 +3,7 @@
 # include <stdarg.h> //scanf()
 # include <string.h> // strcmp()
 
-size_t	contacts_count(Contact contact[8])
+static size_t	contacts_count(Contact contact[8])
 {
 	size_t	index = 0;
 
@@ -24,6 +24,19 @@ size_t	contacts_count(Contact contact[8])
 		index++;
 	}
 	return index;
+}
+
+static void	unknown_command()
+{
+	std::cout << "Unknown command: ";
+	std::cout << command << std::endl;
+	std::cout << "Please, use the following:" << std::endl;
+	std::cout << "ADD\nSEARCH\nEXIT\n" << std::endl;
+}
+
+void	print_available_contacts(Contact contact[8])
+{
+	
 }
 
 int main(void)
@@ -50,17 +63,19 @@ int main(void)
 			{
 				contact[empty].set_data();
 				std::cout << "Contact added!\n" << std::endl;
+				std::cout << empty + 1;
+				std::cout << " contact(s) in Phone Book" << std::endl;;
 			}
 			else
 				std::cout << "Phonebook is full" << std::endl;
-			std::cout << contact[0].get_name();
+		}
+		else if (!command.compare("SEARCH")
+		{
+			print_available_contacts(contact);
 		}
 		else
 		{
-			std::cout << "Unknown command: ";
-			std::cout << command << std::endl;
-			std::cout << "Please, use the following:" << std::endl;
-			std::cout << "ADD\nSEARCH\nEXIT\n" << std::endl;
+			unknown_command();
 		}
 	}
 	return 0;

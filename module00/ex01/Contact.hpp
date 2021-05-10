@@ -23,19 +23,62 @@ class		Contact {
 	public:
 
 		void		set_data() {
-			std::string	str;
+			std::string	str = "";
 
 			std::cout << "Enter name" << std::endl;
 			std::getline(std::cin, str);
 			set_name(str);
+			str = "";
 
 			std::cout << "Enter last name" << std::endl;
 			std::getline(std::cin, str);
 			set_last_name(str);
+			str = "";
 
 			std::cout << "Enter nickname" << std::endl;
 			std::getline(std::cin, str);
 			set_nickname(str);
+			str = "";
+
+			std::cout << "Enter login" << std::endl;
+			std::getline(std::cin, str);
+			set_login(str);
+			str = "";
+
+			std::cout << "Enter post" << std::endl;
+			std::getline(std::cin, str);
+			set_post(std::cin, str);
+			str = "";
+
+			std::cout << "Enter email" << std::endl;
+			std::getline(std::cin, str);
+			set_email(str);
+			str = "";
+
+			str::cout << "Enter phone" << std::endl;
+			std::getline(std::cin, str);
+			set_phone(str);
+			str = "";
+
+			str::cout << "Enter birthday" << std::endl;
+			str::getline(std::cin, str);
+			set_phone(str);
+			str = "";
+
+			str::cout << "Enter favorite meal" << std::endl;
+			str::getline(std::cin, str);
+			set_birthday(str);
+			str = "";
+
+			str::cout << "Enter underwear color" << std::endl;
+			str::getline(std::cin, str);
+			set_underwear_color(str);
+			str = "";
+
+			str::cout << "Enter darkest secret" << std::endl;
+			str:: getline(std::cin, str);
+			set_secret(str);
+			str = "";
 		}
 
 		void		set_name(std::string name) {this->name = name;}
