@@ -1,9 +1,8 @@
 NAME = phonebook
-SRC = main.cpp Phonebook.cpp Contact.cpp
-OBJ = $(SRC:.cpp=.o)
+SRC = phonebook.cpp phonebook_utils.cpp
 all: $(NAME)
-$(NAME): $(OBJ)
-	clang++ -Wall -Wextra -Werror -o $(NAME) $(OBJ) -g
+$(NAME): $(SRC) *.hpp
+	clang++ -Wall -Wextra -Werror -o $(NAME) $(SRC) -g
 clean:
 	rm -rf $(OBJ)
 fclean: clean

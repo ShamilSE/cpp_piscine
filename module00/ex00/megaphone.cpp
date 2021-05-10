@@ -13,6 +13,8 @@ int main(int argc, char **argv)
 		{
 			std::cout << (char)toupper(argv[i][ii]);
 		}
+		if (argv[i + 1])
+			std::cout << " ";
 		ii = 0;
 	}
 	std::cout << '\n';

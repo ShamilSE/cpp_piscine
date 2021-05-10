@@ -23,64 +23,76 @@ class		Contact {
 	public:
 
 		void		set_data() {
-			std::string	str = "";
+
+			std::string	command = "";
 
 			std::cout << "Enter name" << std::endl;
-			std::getline(std::cin, str);
-			set_name(str);
-			str = "";
+			if (!std::getline(std::cin, command))
+				exit(0);
+			set_name(command);
+			command = "";
 
 			std::cout << "Enter last name" << std::endl;
-			std::getline(std::cin, str);
-			set_last_name(str);
-			str = "";
+			if (!std::getline(std::cin, command))
+				exit(0);
+			set_last_name(command);
+			command = "";
 
 			std::cout << "Enter nickname" << std::endl;
-			std::getline(std::cin, str);
-			set_nickname(str);
-			str = "";
+			if (!std::getline(std::cin, command))
+				exit(0);
+			set_nickname(command);
+			command = "";
 
 			std::cout << "Enter login" << std::endl;
-			std::getline(std::cin, str);
-			set_login(str);
-			str = "";
+			if (!std::getline(std::cin, command))
+				exit(0);
+			set_login(command);
+			command = "";
 
 			std::cout << "Enter post" << std::endl;
-			std::getline(std::cin, str);
-			set_post(std::cin, str);
-			str = "";
+			if (!std::getline(std::cin, command))
+				exit(0);
+			set_post(command);
+			command = "";
 
 			std::cout << "Enter email" << std::endl;
-			std::getline(std::cin, str);
-			set_email(str);
-			str = "";
+			if (!std::getline(std::cin, command))
+				exit(0);
+			set_email(command);
+			command = "";
 
-			str::cout << "Enter phone" << std::endl;
-			std::getline(std::cin, str);
-			set_phone(str);
-			str = "";
+			std::cout << "Enter phone" << std::endl;
+			if (!std::getline(std::cin, command))
+				exit(0);
+			set_phone(command);
+			command = "";
 
-			str::cout << "Enter birthday" << std::endl;
-			str::getline(std::cin, str);
-			set_phone(str);
-			str = "";
+			std::cout << "Enter birthday" << std::endl;
+			if (!std::getline(std::cin, command))
+				exit(0);
+			set_phone(command);
+			command = "";
 
-			str::cout << "Enter favorite meal" << std::endl;
-			str::getline(std::cin, str);
-			set_birthday(str);
-			str = "";
+			std::cout << "Enter favorite meal" << std::endl;
+			if (!std::getline(std::cin, command))
+				exit(0);
+			set_birthday(command);
+			command = "";
 
-			str::cout << "Enter underwear color" << std::endl;
-			str::getline(std::cin, str);
-			set_underwear_color(str);
-			str = "";
+			std::cout << "Enter underwear color" << std::endl;
+			if (!std::getline(std::cin, command))
+				exit(0);
+			set_underwear_color(command);
+			command = "";
 
-			str::cout << "Enter darkest secret" << std::endl;
-			str:: getline(std::cin, str);
-			set_secret(str);
-			str = "";
+			std::cout << "Enter darkest secret" << std::endl;
+			if (!std:: getline(std::cin, command))
+				exit(0);
+			set_secret(command);
+			command = "";
 		}
-
+		
 		void		set_name(std::string name) {this->name = name;}
 		void		set_last_name(std::string last_name) {this->last_name = last_name;}
 		void		set_nickname(std::string nickname) {this->nickname = nickname;}
@@ -105,5 +117,13 @@ class		Contact {
 		std::string get_underwear_color() {return this->underwear_color;}
 		std::string	get_secret() {return this->secret;}
 };
+
+size_t	contacts_count(Contact contact[8]);
+void	unknown_command(std::string command);
+void	print_spaces(std::string field);
+void	print_ten_of(std::string str);
+void	print_available_contacts(Contact contact[8]);
+void	print_contact_info(Contact contact);
+bool	check_integer(std::string command);
 
 #endif
