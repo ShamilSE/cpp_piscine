@@ -1,10 +1,5 @@
 #include "Zombie.hpp"
 
-// Zombie::Zombie(std::string name, std::string type) {
-// 	this->name = name;
-// 	this->type = type;
-// }
-
 std::string	Zombie::getType(void) {return this->type;}
 std::string	Zombie::getName(void) {return this->name;}
 

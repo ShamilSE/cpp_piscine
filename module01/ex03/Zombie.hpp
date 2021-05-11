@@ -11,8 +11,6 @@ class	Zombie {
 
 	
 	public:
-		// Zombie(std::string name, std::string type);
-
 		std::string	getType(void);
 		std::string	getName(void);
 
