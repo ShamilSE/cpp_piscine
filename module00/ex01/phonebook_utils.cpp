@@ -69,15 +69,21 @@ void	print_available_contacts(Contact contact[8])
 	std::string	string = "";
 
 	std::cout << "     index|first name| last name|  nickname|" << std::endl;
-	while (index < contacts_count(contact) - 1)
+	if (contacts_count(contact))
 	{
-		print_spaces("9");
-		std::cout << index;
-		print_ten_of(contact[index].get_name());
-		print_ten_of(contact[index].get_last_name());
-		print_ten_of(contact[index].get_nickname());
-		std::cout << std::endl;
-		index++;
+		size_t	num_of_contacts = contacts_count(contact) - 1;
+		if (num_of_contacts == 8)
+			num_of_contacts = 7;
+		while (index <= num_of_contacts)
+		{
+			print_spaces("9");
+			std::cout << index;
+			print_ten_of(contact[index].get_name());
+			print_ten_of(contact[index].get_last_name());
+			print_ten_of(contact[index].get_nickname());
+			std::cout << std::endl;
+			index++;
+		}
 	}
 }
 
@@ -120,7 +126,7 @@ bool	check_integer(std::string command)
 {
 	if (command.length() > 1)
 		return false;
-	if (command[0] >= '0' && command[0] <= '9')
+	if (command[0] >= '0' && command[0] <= '7')
 		return true;
 	return false;
 }

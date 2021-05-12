@@ -28,7 +28,8 @@ int main(void)
 		else if (!command.compare("SEARCH"))
 		{
 			print_available_contacts(contact);
-			print_more_contact_info(contact);
+			if (contacts_count(contact))
+				print_more_contact_info(contact);
 		}
 		else
 		{
