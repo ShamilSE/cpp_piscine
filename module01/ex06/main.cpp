@@ -1,10 +1,14 @@
 #include "Wearpon.hpp"
+#include "HumanA.hpp"
+#include "HumanB.hpp"
 #include <string>
 #include <iostream>
 
 int	main(void) {
-	Wearpon	gun;
+	Wearpon		club = Wearpon("crude spiked club");
 
-	gun.setType("pistol");
-	std::cout << gun.getType() << std::endl;
+	HumanA bob("Bob", club);
+	bob.attack();
+	club.setType("minigun");
+	bob.attack();
 }
