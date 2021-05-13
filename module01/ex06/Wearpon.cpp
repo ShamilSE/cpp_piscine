@@ -2,11 +2,10 @@
 #include <string>
 #include <iostream>
 
-Wearpon::Wearpon(std::string type) {this->type = type;}
+Wearpon::Wearpon(std::string type): _type(type) {};
 
-const std::string&	Wearpon::getType(void) {
-	const std::string& wearpon_type = this->type;
-	return wearpon_type;
-}
+std::string	Wearpon::getType() {return this->_type;}
 
-void	Wearpon::setType(std::string type) {this->type = type;}
+void	Wearpon::setType(std::string type) {
+	this->_type = type;
+};

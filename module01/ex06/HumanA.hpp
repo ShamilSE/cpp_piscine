@@ -1,20 +1,20 @@
 #ifndef HUMANA_HPP
 #define HUMANA_HPP
 
-#include "Wearpon.hpp"
 #include <string>
 #include <iostream>
+#include "Wearpon.hpp"
 
-class	HumanA {
+class HumanA {
 	private:
-		Wearpon		wearpon;
-		std::string	name;
+		Wearpon&	_wearpon;
+		std::string	_name;
 
 	public:
 		HumanA(std::string name, Wearpon& wearpon);
-		void	attack(void);
+		void	attack();
 
-		Wearpon*	getWearpon(void);
+		Wearpon&	getWearpon();
 };
 
 #endif

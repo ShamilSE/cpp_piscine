@@ -1,17 +1,13 @@
+#include "HumanA.hpp"
 #include <string>
 #include <iostream>
-#include "HumanA.hpp"
+ 
+HumanA::HumanA(std::string name, Wearpon& wearpon): _wearpon(wearpon), _name(name) {}
 
-HumanA::HumanA(std::string name, Wearpon& wearpon) : wearpon(wearpon) {
-	this->name = name;
-	this->wearpon = wearpon;
+void	HumanA::attack() {
+	std::cout << _name << " attacks whis his " << _wearpon.getType() << std::endl;
 }
 
-void	HumanA::attack(void) {
-	std::cout << this->name;
-	std::cout << " attacks whis his ";
-	std::cout << this->wearpon.getType() << std::endl;
+Wearpon&	HumanA::getWearpon() {
+	return _wearpon;
 }
-
-Wearpon*	HumanA::getWearpon(void) {return &(this->wearpon);}
->>>>>>> b103dc985aa40c3b9a358c3252becc9b13747cf5

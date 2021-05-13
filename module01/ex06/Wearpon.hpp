@@ -4,16 +4,15 @@
 #include <string>
 #include <iostream>
 
-class	Wearpon {
+class Wearpon {
 	private:
-		std::string	type;
+		std::string	_type;
 
 	public:
+		Wearpon();
 		Wearpon(std::string type);
-
-		void	setType(std::string type);
-
-		const std::string&	getType(void);
+		std::string	getType();
+		void		setType(std::string type);
 };
 
 #endif
