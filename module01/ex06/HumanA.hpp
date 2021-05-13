@@ -1,5 +1,5 @@
-#ifndef HUMANA
-#define HUMANA
+#ifndef HUMANA_HPP
+#define HUMANA_HPP
 
 #include "Wearpon.hpp"
 #include <string>
@@ -7,12 +7,14 @@
 
 class	HumanA {
 	private:
-		std::string	name;
 		Wearpon		wearpon;
+		std::string	name;
 
 	public:
-		void		attack(void);
-		Wearpon&	getWearponType(void);
+		HumanA(std::string name, Wearpon& wearpon);
+		void	attack(void);
+
+		Wearpon*	getWearpon(void);
 };
 
 #endif
