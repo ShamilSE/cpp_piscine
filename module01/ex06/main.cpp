@@ -1,10 +1,10 @@
-#include "Wearpon.hpp"
+#include "HumanA.hpp"
 #include <string>
 #include <iostream>
 
 int	main(void) {
-	Wearpon	gun;
+	HumanA	kirill;
 
-	gun.setType("pistol");
-	std::cout << gun.getType() << std::endl;
+	kirill.wearpon.setType("pistol");
+	std::cout << kirill.attack() << std::endl;
 }
