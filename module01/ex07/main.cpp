@@ -12,15 +12,19 @@ void	ft_replace(std::ifstream& in, std::ofstream& out, const std::string& s1, co
 	std::ostringstream buf;
 	std::string	str;
 	std::string	line;
-	size_t		found;
+	size_t		found = 0;
+	char		a;
 
 	buf << in.rdbuf();
 	str = buf.str();
 	while (true) {
-		found = str.find(s1);
+		found = str.find(s1, found);
 		if (found == std::string::npos)
 			break;
 		str.replace(found, s1.length(), s2);
+		a = str[found];
+		while (str[found] == a)
+			found++;
 	}
 
 	out << str;
