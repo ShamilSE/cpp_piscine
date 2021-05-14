@@ -15,5 +15,6 @@ Zombie*	ZombieEvent::randomChump(void) {
 
 	int num = rand() % 10;
 	Zombie*	random = this->newZombie(names[num], "random one");
+	std::cout << "<" << random->getName() << " (" << random->getType() << ")> Braiiiiiiinnnssss..." << std::endl;
 	return random;
 }

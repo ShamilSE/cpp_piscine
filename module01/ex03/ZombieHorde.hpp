@@ -6,10 +6,10 @@
 class	ZombieHorde {
 	private:
 		Zombie	*zombies;
-		size_t		N;
+		int		N;
 
 	public:
-		ZombieHorde(size_t N);
+		ZombieHorde(int N);
 		void	announce(void);
 };
 

@@ -10,6 +10,5 @@ void	memoryLeak() {
 
 int	main(void) {
 	memoryLeak();
-	while (true);
 	return 0;
 }

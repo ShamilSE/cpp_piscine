@@ -12,6 +12,6 @@ void		Zombie::setType(std::string type) {this->type = type;}
 void		Zombie::setName(std::string name) {this->name = name;}
 
 void		Zombie::announce(void) {
-	std::cout << "<" << this->name << " (" << this->type << ")>";
-	std::cout << "> Braiiiiiiinnnssss..." << std::endl;
+	std::cout << "<" << this->name << " (" << this->type << ")> ";
+	std::cout << "Braiiiiiiinnnssss..." << std::endl;
 }

@@ -3,6 +3,7 @@
 #include <iostream>
 
 int	main(void) {
-	ZombieHorde	*horde = new ZombieHorde(10);
+	ZombieHorde	*horde = new ZombieHorde(5);
 	horde->announce();
+	delete horde;
 }

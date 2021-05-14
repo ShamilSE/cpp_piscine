@@ -11,7 +11,6 @@ class	Human {
 	public:
 		std::string	identify(void);
 		Brain		&getBrain(void);
-	
 };
 
 #endif
