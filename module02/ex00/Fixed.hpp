@@ -4,7 +4,7 @@
 class Fixed {
 	private:
 		int					_fixed_point;
-		static const int	_fractorial;
+		static const int	_fractorial = 0;
 
 	public:
 		Fixed();
