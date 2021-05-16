@@ -1,6 +1,6 @@
-NAME = fragtrap
-SRC = FragTrap.cpp main.cpp
-INC = FragTrap.hpp
+NAME = scavtrap
+SRC = FragTrap.cpp main.cpp ScavTrap.cpp
+INC = FragTrap.hpp ScavTrap.hpp
 CFLAGS = -Wall -Wextra -Werror
 
 all: $(NAME)

@@ -1,10 +1,8 @@
-#include "FragTrap.hpp"
-#include <iostream>
+#include "ScavTrap.hpp"
 #include <string>
-#include <time.h>
+#include <iostream>
 
-FragTrap::FragTrap(std::string name)
-:
+ScavTrap::ScavTrap(std::string name):
 	_hit_points(100),
 	_max_hit_points(100),
 	_energy_points(100),
@@ -15,12 +13,12 @@ FragTrap::FragTrap(std::string name)
 	_ranged_attack_damage(20),
 	_armor_damage_reduction(5)
 {
-	std::cout << "FR4G-TP: " << _name <<  " Alaka-ZAM!" << std::endl;
+	std::cout << "I was born" << std::endl;
 }
 
-FragTrap::~FragTrap() {
+ScavTrap::~ScavTrap() {
 	std::cout << 
-		"FR4G-TP: " << _name <<
+		"ScavTrap: " << _name <<
 		" Yessss, look into my eyes. " <<
 		"You're getting sleepy. " <<
 		"You're getting... " <<
@@ -28,10 +26,10 @@ FragTrap::~FragTrap() {
 	<< std::endl;
 }
 
-void	FragTrap::rangedAttack(std::string const & target) {
+void	ScavTrap::rangedAttack(std::string const & target) {
 	if (!target.empty())
 	{
-		std::cout << "FR4G-TP: " << _name <<
+		std::cout << "ScavTrap: " << _name <<
 			" attacks " << target <<
 			" at range, causing " <<
 			_ranged_attack_damage <<
@@ -42,10 +40,10 @@ void	FragTrap::rangedAttack(std::string const & target) {
 		std::cout << "nobody to attack((" << std::endl;
 }
 
-void	FragTrap::meleeAttack(std::string const & target) {
+void	ScavTrap::meleeAttack(std::string const & target) {
 	if (!target.empty())
 	{
-		std::cout << "FR4G-TP: " << _name <<
+		std::cout << "ScavTrap: " << _name <<
 			" attacks " << target <<
 			" at range, causing " <<
 			_melee_attack_damage <<
@@ -56,7 +54,7 @@ void	FragTrap::meleeAttack(std::string const & target) {
 		std::cout << "nobody to attack((" << std::endl;
 }
 
-void	FragTrap::takeDamage(unsigned int amount) {
+void	ScavTrap::takeDamage(unsigned int amount) {
 	if (((!_armor_damage_reduction && amount >= _hit_points) || 
 	(_armor_damage_reduction && ((unsigned int)(amount / 2)) >= _hit_points)) || amount <= 0);
 	else
@@ -75,7 +73,7 @@ void	FragTrap::takeDamage(unsigned int amount) {
 	}
 }
 
-void	FragTrap::beRepaired(unsigned int amount) {
+void	ScavTrap::beRepaired(unsigned int amount) {
 	if ((amount + _hit_points) >= _max_hit_points || amount <= 0);
 	else
 	{
@@ -84,16 +82,15 @@ void	FragTrap::beRepaired(unsigned int amount) {
 	}
 }
 
-void	FragTrap::vaulthunter_dot_exe(std::string const & target) {
+void	ScavTrap::challengeNewcomer() {
 	srand((unsigned int)(time(NULL) / 2));
-	std::string attack_type_pool[5] = 
-	{"Hacker attack!", "Mental attack!", 
-	"Hit below the belt attack!", "Throwing pen attack!", "Cringe attack!"};
+	std::string challenge[5] = 
+	{"Do backflip", "Eat raw egg", 
+	"Drink oil from FR4G-TP", "Create cringe meme", "Make FR4G-TP feel computer pain"};
 
-	std::cout << "FR4G-TP: " << _name <<
-		" attacks " << target <<
-		" at range, causing " <<
-		0 << " points of damage using " <<
-		attack_type_pool[rand() % 5]
+	std::cout << "ScavTrap: " <<
+		" thinking... thinking...\n"  
+		"Aaaand you need to " <<
+		challenge[rand() % 5]
 	<< std::endl;
 }
