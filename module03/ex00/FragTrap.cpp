@@ -64,10 +64,14 @@ void	FragTrap::takeDamage(unsigned int amount) {
 		std::cout << "Why do I even feel pain?!" << std::endl;
 		if (_armor_damage_reduction)
 		{
-			amount = 2;
+			amount = (int)(amount / 2);
 			_armor_damage_reduction--;
+			_hit_points -= amount;
+			if (_armor_damage_reduction == 0)
+				std::cout << "Armor is broken" << std::endl;
 		}
-		_hit_points -= (int)(amount / 2);
+		else
+			_hit_points -= amount;
 	}
 }
 
