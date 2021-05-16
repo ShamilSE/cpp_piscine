@@ -5,8 +5,8 @@
 #include <cmath>
 
 class Fixed {
-	public:
-		int					_fixed_point;
+	private:
+		int					_value;
 		static const int	_fractorial = 8;
 		static const int	_exponent;
 

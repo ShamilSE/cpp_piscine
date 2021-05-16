@@ -3,20 +3,18 @@
 #include <iostream>
 #include <cmath>
 
-const int Fixed::_exponent = 1 << Fixed::_fractorial;
-
-Fixed::Fixed():  _fixed_point(0) {
+Fixed::Fixed():  _value(0) {
 	std::cout << "Default constructor called" << std::endl;
 }
 
 Fixed::Fixed(const int i) {
 	std::cout << "Int constructor called" << std::endl;
-	_fixed_point = i;
+	_value = i * 256;
 }
 
 Fixed::Fixed(const float i) {
 	std::cout << "Float constructor called" << std::endl;
-	this->_fixed_point = roundf(i);
+	this->_value = roundf(i * 256);
 }
 
 Fixed::~Fixed() {
@@ -25,23 +23,23 @@ Fixed::~Fixed() {
 
 Fixed::Fixed(const Fixed& src) {
 	std::cout << "Copy constructor called" << std::endl;
-	this->_fixed_point = src._fixed_point;
+	this->_value = src._value;
 }
 
 Fixed& Fixed::operator=(const Fixed& src) {
 	std::cout << "Assignation operator called" << std::endl;
 
-	this->_fixed_point = src._fixed_point;
+	this->_value = src._value;
 	return *this;
 }
 
 
 float	Fixed::toFloat(void) const {
-	return (float)_fixed_point;
+	return static_cast<float>(_value ) / 256;
 }
 
 int		Fixed::toInt(void) const {
-	return (int)_fixed_point;
+	return _value / 256;
 }
 
 

@@ -3,7 +3,7 @@
 
 class Fixed {
 	private:
-		int					_fixed_point;
+		int					_value;
 		static const int	_fractorial = 0;
 
 	public:
