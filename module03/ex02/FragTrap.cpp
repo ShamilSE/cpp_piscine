@@ -3,19 +3,28 @@
 #include <string>
 #include <time.h>
 
-// FragTrap::FragTrap(std::string name) {
-// 	std::cout << "FR4G-TP: " << _name <<  " Alaka-ZAM!" << std::endl;
-// }
+FragTrap::FragTrap(std::string name): ClapTrap(name) {
+	// _hit_points = 100;
+	// _max_hit_points = 100;
+	// _energy_points = 100;
+	// _max_energy_points = 100;
+	// _level = 1,
+	// _name(name),
+	// _melee_attack_damage(30),
+	// _ranged_attack_damage(20),
+	// _armor_damage_reduction(5)
+	std::cout << "FR4G-TP: " << name <<  " Alaka-ZAM!" << std::endl;
+}
 
-// FragTrap::~FragTrap() {
-// 	std::cout << 
-// 		"FR4G-TP: " << _name <<
-// 		" Yessss, look into my eyes. " <<
-// 		"You're getting sleepy. " <<
-// 		"You're getting... " <<
-// 		"zzzzzz... Zzzzzz..."
-// 	<< std::endl;
-// }
+FragTrap::~FragTrap() {
+	std::cout << 
+		"FR4G-TP: " << _name <<
+		" Yessss, look into my eyes. " <<
+		"You're getting sleepy. " <<
+		"You're getting... " <<
+		"zzzzzz... Zzzzzz..."
+	<< std::endl;
+}
 
 void	FragTrap::vaulthunter_dot_exe(std::string const & target) {
 	srand((unsigned int)(time(NULL) / 2));

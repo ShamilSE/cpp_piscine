@@ -15,14 +15,18 @@ ClapTrap::ClapTrap (std::string name)
 	_melee_attack_damage(30),
 	_ranged_attack_damage(20),
 	_armor_damage_reduction(5)
-{}
+{
+	std::cout << "ClapTrap construcrot called" << std::endl;
+}
 
-ClapTrap::~ClapTrap () {}
+ClapTrap::~ClapTrap () {
+	std::cout << "ClapTrap destructor called" << std::endl;
+}
 
 void	ClapTrap::rangedAttack(std::string const & target) {
 	if (!target.empty())
 	{
-		std::cout << "FR4G-TP: " << _name <<
+		std::cout << _name <<
 			" attacks " << target <<
 			" at range, causing " <<
 			_ranged_attack_damage <<
@@ -36,7 +40,7 @@ void	ClapTrap::rangedAttack(std::string const & target) {
 void	ClapTrap::meleeAttack(std::string const & target) {
 	if (!target.empty())
 	{
-		std::cout << "FR4G-TP: " << _name <<
+		std::cout  << _name <<
 			" attacks " << target <<
 			" at range, causing " <<
 			_melee_attack_damage <<
