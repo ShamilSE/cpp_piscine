@@ -23,8 +23,7 @@ void	ft_replace(std::ifstream& in, std::ofstream& out, const std::string& s1, co
 			break;
 		str.replace(found, s1.length(), s2);
 		a = str[found];
-		while (str[found] == a)
-			found++;
+		found += s1.length();
 	}
 
 	out << str;
