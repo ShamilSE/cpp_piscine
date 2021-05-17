@@ -16,12 +16,14 @@ ClapTrap::ClapTrap (std::string name)
 	_ranged_attack_damage(20),
 	_armor_damage_reduction(5)
 {
-	std::cout << "ClapTrap construcrot called" << std::endl;
+	std::cout << "ClapTrap constructor called" << std::endl;
 }
 
 ClapTrap::~ClapTrap () {
 	std::cout << "ClapTrap destructor called" << std::endl;
 }
+
+std::string	ClapTrap::getName() const {return _name;}
 
 void	ClapTrap::rangedAttack(std::string const & target) {
 	if (!target.empty())
@@ -71,10 +73,12 @@ void	ClapTrap::takeDamage(unsigned int amount) {
 }
 
 void	ClapTrap::beRepaired(unsigned int amount) {
-	if ((amount + _hit_points) >= _max_hit_points || amount <= 0);
+	if (amount <= 0);
 	else
 	{
 		std::cout << "Sweet life juice!" << std::endl;
 		_hit_points += amount;
+		if (_hit_points > _max_hit_points)
+			_hit_points = _max_hit_points;
 	}
 }
