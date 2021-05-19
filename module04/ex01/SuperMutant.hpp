@@ -5,7 +5,7 @@
 
 class SuperMutant : public Enemy {
 	public:
-		SuperMutant(int hp, std::string const & type);
+		SuperMutant();
 		SuperMutant(const SuperMutant & other);
 		SuperMutant& operator=(const SuperMutant & other);
 		~SuperMutant();

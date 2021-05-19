@@ -4,6 +4,12 @@
 #include "Enemy.hpp"
 
 class RadScorpion : public Enemy {
+	public:
+		RadScorpion();
+		RadScorpion(const RadScorpion & other);
+		RadScorpion& operator=(const RadScorpion & other);
+		~RadScorpion();
+
 
 };
 
