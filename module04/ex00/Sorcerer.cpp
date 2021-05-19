@@ -33,10 +33,6 @@ void	Sorcerer::polymorph(Victim const & src) const {
 	src.getPolymorphed();
 }
 
-void	Sorcerer::polymorph(Peon const & src) const {
-	src.getPolymorphed();
-}
-
 std::ostream &operator<<(std::ostream &out, const Sorcerer & src) {
 	out << src.greetings() << std::endl;
 	return out;

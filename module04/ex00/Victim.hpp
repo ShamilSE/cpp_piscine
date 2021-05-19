@@ -16,7 +16,7 @@ class Victim {
 
 		std::string	getName() const;
 		std::string	greetings() const;
-		void		getPolymorphed() const;
+		virtual void	getPolymorphed() const;
 };
 
 std::ostream&	operator<<(std::ostream& out, const Victim & src);

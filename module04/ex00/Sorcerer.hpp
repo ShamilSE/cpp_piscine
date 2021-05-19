@@ -22,8 +22,7 @@ class Sorcerer {
 		std::string	getTitle() const;
 		std::string	greetings() const;
 
-		void	polymorph(Victim const & src) const;
-		void	polymorph(Peon const & src) const;
+		virtual void	polymorph(Victim const & src) const;
 };
 
 std::ostream &operator<<(std::ostream &out, const Sorcerer & src);
