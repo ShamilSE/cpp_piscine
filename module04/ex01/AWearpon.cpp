@@ -12,9 +12,7 @@ AWearpon::AWearpon(const AWearpon & other)
 	_name(other._name),
 	_damage(other._damage),
 	_apcost(other._apcost)
-{
-	std::cout << "The gun " << _name << " has created" << std::endl;
-}
+{}
 
 AWearpon& AWearpon::operator=(const AWearpon & other) {
 	this->_name = other._name;
@@ -23,9 +21,7 @@ AWearpon& AWearpon::operator=(const AWearpon & other) {
 	return *this;
 }
 
-AWearpon::~AWearpon() {
-	std::cout << "The gun " << getName() << " is destroyed!" << std::endl;
-}
+AWearpon::~AWearpon() {}
 
 std::string	AWearpon::getName() const {return _name;}
 int	AWearpon::getAPCost() const {return _apcost;}

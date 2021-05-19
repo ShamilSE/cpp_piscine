@@ -5,9 +5,6 @@
 #include <iostream>
 
 class AWearpon {
-	private:
-		AWearpon();
-
 	protected:
 		std::string	_name;
 		size_t	_damage;
@@ -17,7 +14,7 @@ class AWearpon {
 	public:
 		AWearpon(const AWearpon & other);
 		AWearpon& operator=(const AWearpon & other);
-		~AWearpon();
+		virtual ~AWearpon();
 		std::string getName() const;
 		int	getAPCost() const;
 		size_t	getDamage() const;

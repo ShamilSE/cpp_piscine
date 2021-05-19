@@ -1,6 +1,6 @@
 NAME = a.out
-SRC = main.cpp AWearpon.cpp 
-INC = AWearpon.hpp
+SRC = main.cpp AWearpon.cpp PlasmaRiffle.cpp PowerFist.cpp Enemy.cpp SuperMutant.cpp
+INC = AWearpon.hpp AWearpon.hpp PlasmaRiffle.hpp PowerFist.hpp Enemy.hpp SuperMutant.hpp
 CFLAGS = -Wall -Wextra -Werror
 
 all: $(NAME)
