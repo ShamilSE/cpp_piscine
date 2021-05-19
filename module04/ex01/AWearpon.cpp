@@ -15,14 +15,14 @@ AWearpon::AWearpon(const AWearpon & other)
 {}
 
 AWearpon& AWearpon::operator=(const AWearpon & other) {
-	this->_name = other._name;
-	this->_damage = other._damage;
-	this->_apcost = other._apcost;
+	_name = other._name;
+	_damage = other._damage;
+	_apcost = other._apcost;
 	return *this;
 }
 
 AWearpon::~AWearpon() {}
 
-std::string	AWearpon::getName() const {return _name;}
+std::string const &	AWearpon::getName() const {return _name;}
 int	AWearpon::getAPCost() const {return _apcost;}
-size_t	AWearpon::getDamage() const {return _damage;}
+int	AWearpon::getDamage() const {return _damage;}

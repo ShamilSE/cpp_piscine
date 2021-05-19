@@ -53,6 +53,7 @@ void	Character::attack(Enemy * enemy) {
 			enemy->getType() << " whith a " <<
 			getWearpon()->getName() << std::endl;
 			getWearpon()->attack();
+			
 			enemy->takeDamage(getWearpon()->getDamage());
 			_AP -= getWearpon()->getAPCost();
 		}

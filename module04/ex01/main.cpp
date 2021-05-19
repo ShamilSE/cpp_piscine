@@ -28,5 +28,10 @@ int	main(void) {
 	me->attack(b);
 	std::cout << *me;
 	//----------------------//
+
+
+	delete pr;
+	delete pf;
+	delete me;
 	return 0;
 }

@@ -7,17 +7,17 @@
 class AWearpon {
 	protected:
 		std::string	_name;
-		size_t	_damage;
-		size_t	_apcost;
-		AWearpon(std::string const & name, int apcost, int damage);
+		int	_damage;
+		int	_apcost;
 
 	public:
+		AWearpon(std::string const & name, int apcost, int damage);
 		AWearpon(const AWearpon & other);
 		AWearpon& operator=(const AWearpon & other);
 		virtual ~AWearpon();
-		std::string getName() const;
+		std::string const & getName() const;
 		int	getAPCost() const;
-		size_t	getDamage() const;
+		int	getDamage() const;
 		virtual void	attack() const = 0;
 };
 
