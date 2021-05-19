@@ -2,7 +2,7 @@
 
 PowerFist::PowerFist()
 :
-	AWearpon("Power Fist", 50, 8)
+	AWearpon("Power Fist", 8, 50)
 {}
 
 PowerFist::PowerFist(const PowerFist & other)

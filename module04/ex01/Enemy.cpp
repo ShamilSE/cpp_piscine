@@ -23,9 +23,11 @@ std::string const & Enemy::getType() const {return _type;}
 int	Enemy::getHP() const {return _hit_points;}
 
 void Enemy::takeDamage(int damage) {
-	if (damage >= _hit_points || damage < 0);
+	if (damage < 0);
 	else
 	{
 		_hit_points -= damage;
+		if (_hit_points < 0)
+			delete this;
 	}
 }

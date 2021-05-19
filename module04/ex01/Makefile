@@ -11,7 +11,7 @@ CFLAGS = -Wall -Wextra -Werror
 all: $(NAME)
 
 $(NAME): $(SRC) $(INC)
-	clang++ $(CFLAGS) $(SRC) -o $(NAME)
+	clang++ $(CFLAGS) $(SRC) -o $(NAME) -g
 
 fclean:
 	rm -rf $(NAME)

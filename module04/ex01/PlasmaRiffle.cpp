@@ -2,7 +2,7 @@
 
 PlasmaRiffle::PlasmaRiffle()
 :
-	AWearpon("Plasma Riffle", 21, 5)
+	AWearpon("Plasma Riffle", 5, 21)
 {}
 
 PlasmaRiffle::PlasmaRiffle(std::string const & name, int apcost, int damage)
