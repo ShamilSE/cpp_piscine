@@ -18,14 +18,18 @@ AssaultTerminator::~AssaultTerminator() {
 }
 
 
-void	AssaultTerminator::battleCry() {
+ISpaceMarine* AssaultTerminator::clone() const {
+	return new AssaultTerminator;
+}
+
+void	AssaultTerminator::battleCry() const {
 	std::cout << "This code is unclean. PURIFY IT!" << std::endl;
 }
 
-void	AssaultTerminator::rangedAttack() {
+void	AssaultTerminator::rangedAttack() const {
 	std::cout << "* does nothing *" << std::endl;
 }
 
-void	AssaultTerminator::meleeAttack() {
+void	AssaultTerminator::meleeAttack() const {
 	std::cout << "* attacks with chainfists *" << std::endl;
 }

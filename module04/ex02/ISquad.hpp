@@ -1,7 +1,11 @@
 #ifndef ISQUAD_HPP
 #define ISQUAD_HPP
 
-class	ISuad {
+#include "ISpaceMarine.hpp"
+#include <string>
+#include <iostream>
+
+class	ISquad {
 	public:
 		virtual ~ISquad() {}
 
