@@ -45,6 +45,5 @@ int		Fixed::toInt(void) const {
 
 std::ostream& operator <<(std::ostream& out, const Fixed& src) {
 	out << src.toFloat();
-	(void)src;
 	return out;
 }
