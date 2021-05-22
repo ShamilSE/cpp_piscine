@@ -1,6 +1,6 @@
 NAME = a.out
-SRC = main.cpp AMateria.cpp
-INC = AMateria.hpp
+SRC = main.cpp AMateria.cpp Ice.cpp Character.cpp
+INC = AMateria.hpp Ice.hpp ICharacter.hpp Character.hpp
 CFLAGS = -Wall -Wextra -Werror
 
 all: $(NAME)
