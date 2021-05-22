@@ -2,5 +2,5 @@
 This C++ piscine is introduction to Object Oriented Programming!
 # TODO:
 https://ravesli.com/urok-169-virtualnyj-bazovyj-klass/  
-remember to define virtual destructors in Parsent: `~Parent() {};`. 
+remember to define virtual destructors in Parsent: `~Parent() {};`  
 `class ClassName;` to avoid circular dependencies. 
