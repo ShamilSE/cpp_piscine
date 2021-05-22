@@ -7,17 +7,26 @@ Squad::Squad(const Squad & other) {
 	_marines = new ISpaceMarine*[_count];
 
 	for (int i = 0; i < _count; i++) {
-		_marines[i] = other._marines[i];
+		_marines[i] = other._marines[i]->clone();
 	}
-	std::cout << "Squad copy consctructor" << std::endl;
 }
 
 Squad& Squad::operator=(const Squad & other) {
-	(void)other;
+	_count = other._count;
+	_marines = new ISpaceMarine*[_count];
+
+	for (int i = 0; i < _count; i++) {
+		delete _marines[i];
+		_marines[i] = other._marines[i];
+	}
 	return *this;
 }
 
-Squad::~Squad() {}
+Squad::~Squad() {
+	for (int i = 0; i < _count; i++)
+		delete _marines[i];
+	delete [] _marines;
+}
 
 
 int	Squad::getCount() const {return _count;}
@@ -29,13 +38,14 @@ ISpaceMarine*	Squad::getUnit(int index) const {
 }
 
 int	Squad::push(ISpaceMarine* element) {
+	if (!element)
+		return _count;
+	for (int i = 0; i < _count; i++)
+	{
+		if (element == _marines[i])
+			return _count;
+	}
 	_marines[_count] = element;
 	_count++;
 	return _count;
-}
-
-void	Squad::deleteMarines() {
-	delete _marines;
-	_marintes = NULL;
-	std::cout << "delete marines" << std::endl;
 }

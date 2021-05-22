@@ -9,6 +9,11 @@ class	TacticalMarine : public ISpaceMarine {
 		TacticalMarine(const TacticalMarine & other);
 		TacticalMarine& operator=(const TacticalMarine & other);
 		~TacticalMarine();
+
+		ISpaceMarine* clone() const;
+		void	battleCry() const;
+		void	rangedAttack() const;
+		void	meleeAttack() const;
 };
 
 #endif

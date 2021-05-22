@@ -1,18 +1,26 @@
 #include "Squad.hpp"
 #include "AssaultTerminator.hpp"
+#include "TacticalMarine.hpp"
 
 int	main(void) {
-	Squad	crew;
-	ISpaceMarine*	marine = new AssaultTerminator;
-	ISpaceMarine*	marine2 = new AssaultTerminator;
+	ISpaceMarine*	bob = new TacticalMarine;
+	ISpaceMarine*	jim = new AssaultTerminator;
 
-	crew.push(marine);
-	std::cout << crew.getCount() << std::endl;
-	Squad	crew2 = crew;
+	ISquad*	vlc = new Squad;
+	vlc->push(bob);
+	vlc->push(jim);
+	for (int i = 0; i < vlc->getCount(); ++i)
+	{
+		ISpaceMarine* cur = vlc->getUnit(i);
+		cur->battleCry();
+		cur->rangedAttack();
+		cur->meleeAttack();
+	}
+	delete vlc;
+	// crew.getUnit(98)->battleCry();
 
-	crew2.deleteMarines();
-	crew.push(marine2);
-	std::cout << crew.getCount() << std::endl;
-	std::cout << crew.getUnit(1) << std::endl;
+
+	// for (int i = 0; i < 257; i++)
+	// 	crew.push(marine);
 	return 0;
 }
