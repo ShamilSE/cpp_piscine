@@ -15,3 +15,7 @@ AMateria::~AMateria() {}
 
 std::string	const & AMateria::getType() const {return _type;}
 unsigned int AMateria::getXP() const {return _xp;}
+
+void AMateria::use(ICharacter& target) {
+	(void)target;
+}

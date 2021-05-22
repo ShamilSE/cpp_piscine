@@ -1,38 +1,39 @@
 #include "Character.hpp"
 
-Character::Character(std::string name): _name(name) {}
-// Character::Character(const Character & other) {
-// 	_name = other.getName();
-// 	AMateria* new_materia[4];
+Character::Character(std::string name): _name(name), _m_count(0) {
+	for (int i = 0; i < 4; i++) {
+		_materia[i] = NULL;
+	}
+}
 
-// 	for (int i = 0; i < 4; i++) {
-// 		if (!other._materia[i]);
-// 		else {
-// 			new_materia[i] = other._materia[i];
-// 		}
-// 	}
-// 	this->_materia = new_materia;
-// }
+Character::Character(const Character & other) {
+	_name = other.getName();
 
-// Character& Character::operator=(const Character & other) {
-// 	_name = other.getName();
-// 	AMateria* new_materia[4];
+	for (int i = 0; i < _m_count; i++) {
+		if (!other._materia[i]);
+		else {
+			this->_materia[i] = other._materia[i]->clone();
+		}
+	}
+}
 
-// 	for (int i = 0; i < 4; i++) {
-// 		if (!other._materia[i]);
-// 		else {
-// 			new_materia[i] = other._materia[i];
-// 		}
-// 	}
-// 	this->_materia = new_materia;
-// 	return *this;
-// }
+Character& Character::operator=(const Character & other) {
+
+	for (int i = 0; i < _m_count; i++) {
+		if (!other._materia[i]);
+		else {
+			delete _materia[i];
+			this->_materia[i] = other._materia[i]->clone();
+		}
+	}
+	return *this;
+}
 
 Character::~Character() {
 	for (int i = 0; i < 4; i++) {
-		delete _materia[i];
+		if (_materia[i])
+			delete _materia[i];
 	}
-	// delete [] _materia;
 }
 
 AMateria*	Character::getUnit(int index) const {
@@ -40,4 +41,22 @@ AMateria*	Character::getUnit(int index) const {
 		return NULL;
 	else
 		return _materia[index];
+}
+
+std::string const & Character::getName() const {return _name;}
+
+void	Character::unequip(int idx) {
+	if (idx > _m_count)
+		return;
+	_materia[idx] = NULL;
+	for (int i = idx; i < 4; i++) {
+		_materia[i] = _materia[i + 1];
+	}
+}
+
+void	Character::use(int idx, ICharacter& target) {
+	if (idx > _m_count);
+	else {
+		_materia[idx]->use(target);
+	}
 }

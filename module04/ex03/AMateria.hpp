@@ -5,6 +5,8 @@
 #include <string>
 #include <iostream>
 
+class ICharacter;
+
 class AMateria {
 	protected:
 		std::string		_type;
@@ -20,7 +22,7 @@ class AMateria {
 		unsigned int	getXP() const;
 
 		virtual AMateria* clone() const = 0;
-		// virtual	void use(ICharacter& target);
+		virtual	void use(ICharacter& target);
 };
 
 #endif

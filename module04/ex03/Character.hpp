@@ -8,6 +8,7 @@ class	Character : public ICharacter {
 	private:
 		std::string		_name;
 		AMateria*	_materia[4];
+		int			_m_count;
 
 	public:
 		Character(std::string name);
@@ -15,7 +16,13 @@ class	Character : public ICharacter {
 		Character& operator=(const Character & other);
 		~Character();
 
+		AMateria*	clone() const;
+
 		AMateria*	getUnit(int index) const;
+		std::string	const & getName() const;
+
+		void	unequip(int idx);
+		void	use(int idx, ICharacter& target);
 };
 
 #endif
