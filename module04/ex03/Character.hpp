@@ -6,9 +6,10 @@
 
 class	Character : public ICharacter {
 	private:
-		std::string		_name;
-		AMateria*	_materia[4];
-		int			_m_count;
+		std::string			_name;
+		static const size_t arr_size = 4;
+		AMateria*			_materia[arr_size];
+		size_t				_m_count;
 
 	public:
 		Character(std::string name);

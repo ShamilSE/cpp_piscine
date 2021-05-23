@@ -7,24 +7,16 @@ Character::Character(std::string name): _name(name), _m_count(0) {
 }
 
 Character::Character(const Character & other) {
-	_name = other.getName();
-
-	for (int i = 0; i < _m_count; i++) {
-		if (!other._materia[i]);
-		else {
-			this->_materia[i] = other._materia[i]->clone();
-		}
-	}
+	*this = other;
 }
 
 Character& Character::operator=(const Character & other) {
-
-	for (int i = 0; i < _m_count; i++) {
-		if (!other._materia[i]);
-		else {
+	_m_count = other._m_count;
+	if (this != &other) {
+		for (size_t i = 0; i < _m_count; i++)
 			delete _materia[i];
-			this->_materia[i] = other._materia[i]->clone();
-		}
+		for (size_t i = 0; i < _m_count; i++)
+			_materia[i] = other._materia[i]->clone();
 	}
 	return *this;
 }
@@ -37,16 +29,15 @@ Character::~Character() {
 }
 
 AMateria*	Character::getUnit(int index) const {
-	if (index < 0 || index > 3)
-		return NULL;
-	else
+	if (index > 0 && index < 3)
 		return _materia[index];
+	return NULL;
 }
 
 std::string const & Character::getName() const {return _name;}
 
 void	Character::unequip(int idx) {
-	if (idx > _m_count)
+	if ((size_t)idx > _m_count)
 		return;
 	_materia[idx] = NULL;
 	for (int i = idx; i < 4; i++) {
@@ -56,10 +47,8 @@ void	Character::unequip(int idx) {
 }
 
 void	Character::use(int idx, ICharacter& target) {
-	if (idx > _m_count);
-	else {
+	if ((size_t)idx < _m_count)
 		_materia[idx]->use(target);
-	}
 }
 
 void	Character::equip(AMateria* m) {

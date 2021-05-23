@@ -6,8 +6,7 @@ MateriaSource::MateriaSource() {
 
 MateriaSource::MateriaSource(const MateriaSource & other) {
 	for (int i = 0; i < _count; i++) {
-		if (!other._materia[i]);
-		else {
+		if (other._materia[i]) {
 			this->_materia[i] = other._materia[i]->clone();
 		}
 	}
@@ -15,11 +14,12 @@ MateriaSource::MateriaSource(const MateriaSource & other) {
 
 MateriaSource& MateriaSource::operator=(const MateriaSource & other) {
 	for (int i = 0; i < _count; i++) {
-		if (!other._materia[i]);
-		else {
+		if (other._materia[i]) {
 			delete _materia[i];
 			this->_materia[i] = other._materia[i]->clone();
 		}
+		else
+			delete _materia[i];
 	}
 	return *this;
 }
