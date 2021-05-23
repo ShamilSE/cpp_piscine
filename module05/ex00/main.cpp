@@ -34,5 +34,6 @@ int main(void) {
 	{
 		std::cerr << error << std::endl;
 	}
+	std::cout << tom;
 	return 0;
 }
