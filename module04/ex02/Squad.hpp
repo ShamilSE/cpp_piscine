@@ -7,7 +7,7 @@
 
 class	Squad : public ISquad {
 	private:
-		int	_count;
+		size_t	_count;
 		ISpaceMarine**	_marines;
 
 	public:
