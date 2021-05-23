@@ -22,6 +22,7 @@ class	Character : public ICharacter {
 		std::string	const & getName() const;
 
 		void	unequip(int idx);
+		void	equip(AMateria* m);
 		void	use(int idx, ICharacter& target);
 };
 

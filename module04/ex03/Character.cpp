@@ -52,11 +52,19 @@ void	Character::unequip(int idx) {
 	for (int i = idx; i < 4; i++) {
 		_materia[i] = _materia[i + 1];
 	}
+	_m_count--;
 }
 
 void	Character::use(int idx, ICharacter& target) {
 	if (idx > _m_count);
 	else {
 		_materia[idx]->use(target);
+	}
+}
+
+void	Character::equip(AMateria* m) {
+	if (_m_count < 4) {
+		_materia[_m_count] = m;
+		_m_count++;
 	}
 }
