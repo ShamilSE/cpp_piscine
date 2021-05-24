@@ -17,22 +17,22 @@ bool		Form::getIsSigned() const {return _is_signed;}
 size_t		Form::getGrade() const {return _grade;}
 void	Form::setGrade(size_t grade) {_grade = grade;}
 
-void	Form::GradeTooHighException() {
-	throw "clerk grade is too high";
+const char* Form::GradeTooHighException::what() const throw() {
+	return "grade is too high";
 }
 
-void	Form::GradeTooLowException() {
-	throw "clerk grade is too low";
+const char* Form::GradeTooLowException::what() const throw() {
+	return "grade is too low";
 }
 
 void	Form::beSigned(const Bureaucrat & clerk) {
 	if (clerk.getGrade() <= getGrade() && clerk.getGrade() > 0)
 		_is_signed = true;
 	else {
-		if (clerk.getGrade() < clerk.getMinGrade() && clerk.getGrade() > 0)
-			GradeTooLowException();
+		if (clerk.getGrade() < clerk.getMinGrade() && clerk.getGrade() > _grade)
+			throw GradeTooLowException();
 		else
-			GradeTooHighException();
+			throw GradeTooHighException();
 	}
 }
 

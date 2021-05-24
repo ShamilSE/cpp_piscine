@@ -1,7 +1,7 @@
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 int main(void) {
-	// tests for signing
 	Bureaucrat	tom("Tom");
 	try {tom.setGrade(1);}
 	catch (...) {}
@@ -13,9 +13,9 @@ int main(void) {
 	{
 		passport.beSigned(tom);
 	}
-	catch (const char* error)
+	catch (std::exception & e)
 	{
-		std::cout << error << std::endl;
+		std::cout << e.what() << std::endl;
 	}
 	//---------------------------------//
 	try {tom.setGrade(10);}
@@ -24,20 +24,14 @@ int main(void) {
 	{
 		passport.beSigned(tom);
 	}
-	catch (const char* error)
+	catch (std::exception & e)
 	{
-		std::cout << error << std::endl;
+		std::cout << e.what() << std::endl;
 	}
 	//---------------------------------//
 	try {tom.setGrade(0);}
-	catch (...) {}
-	try
-	{
-		passport.beSigned(tom);
-	}
-	catch (const char* error)
-	{
-		std::cout << error << std::endl;
+	catch (const char* e) {
+		std::cout << e << std::endl;
 	}
 	return 0;
 }
