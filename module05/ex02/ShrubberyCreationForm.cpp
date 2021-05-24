@@ -18,8 +18,14 @@ ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationF
 	return *this;
 }
 
+const char*	ShrubberyCreationForm::OpenFileException::what() const throw() {
+	return "can not open file";
+}
 
-void	ShrubberyCreationForm::action(std::string target) {
+
+void	ShrubberyCreationForm::execute(Bureaucrat const & executor) {
+	Form::execute(executor);
+
 	std::ofstream	out;
 	std::ifstream	in;
 	std::ostringstream	buf;
@@ -27,11 +33,13 @@ void	ShrubberyCreationForm::action(std::string target) {
 
 	in.open("tree");
 	if (!in)
-		std::cout << "can't open file with tree";
+		throw OpenFileException();
 	else {
 		buf << in.rdbuf();
 		content = buf.str();
-		out.open(target + "_shrubbery");
+		out.open(getName() + "_shrubbery");
+		if (!out)
+			throw OpenFileException();
 		out << content << std::endl;
 		in.close();
 		out.close();

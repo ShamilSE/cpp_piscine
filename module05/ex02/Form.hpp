@@ -6,6 +6,7 @@
 #include <iostream>
 #include <fstream>
 #include <sstream>
+#include <ctime>
 
 class	Bureaucrat;
 
@@ -29,6 +30,9 @@ class	Form {
 		class	GradeTooLowException: public std::exception {
 			const char* what() const throw();
 		};
+		class	FormNotSigned: public std::exception {
+			const char* what() const throw();
+		};
 
 		std::string	getName() const;
 		bool	getIsSigned() const;
@@ -36,7 +40,7 @@ class	Form {
 		size_t	getExecuteGrade() const;
 		void	setGrade(size_t grade);
 
-		virtual void	action(std::string target) {(void)target;};
+		virtual void execute(Bureaucrat const & executor);
 
 		void	beSigned(const Bureaucrat & clerk);
 };

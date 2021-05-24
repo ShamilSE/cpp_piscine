@@ -10,7 +10,11 @@ class	ShrubberyCreationForm : public Form {
 		ShrubberyCreationForm& operator=(const ShrubberyCreationForm & other);
 		~ShrubberyCreationForm() {};
 
-		void	action(std::string target);
+		class	OpenFileException : public std::exception {
+			const char* what() const throw();
+		};
+		
+		void	execute(Bureaucrat const & executor);
 };
 
 #endif

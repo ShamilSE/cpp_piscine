@@ -1,9 +1,12 @@
 #ifndef BUREAUCRAT_HPP
 #define BUREAUCRAT_HPP
 
+#include "Form.hpp"
 #include <string>
 #include <iostream>
 #include <exception>
+
+class	Form;
 
 class	Bureaucrat {
 	private:
@@ -24,6 +27,8 @@ class	Bureaucrat {
 		void	setGrade(size_t grade);
 		size_t	getMinGrade() const;
 		size_t	getMaxGrade() const;
+
+		void	signForm(Form & form);
 
 		void	upRate();
 		void	downRate();
