@@ -14,12 +14,14 @@ Bureaucrat& Bureaucrat::operator=(const Bureaucrat & other) {
 size_t	Bureaucrat::getGrade() const {return _grade;}
 std::string const &  Bureaucrat::getName() const {return _name;}
 
-void	Bureaucrat::GradeTooHighException() const {
-	throw "grade is too high";
+
+
+const char*	Bureaucrat::GradeTooHighException::what() const throw() {
+	return "grade is too high";
 }
 
-void	Bureaucrat::GradeTooLowException() const {
-	throw "grade is too low";
+const char*	Bureaucrat::GradeTooLowException::what() const throw() {
+	return "grade is too low";
 }
 
 void	Bureaucrat::setGrade(size_t grade) {
@@ -31,13 +33,13 @@ void	Bureaucrat::setGrade(size_t grade) {
 void	Bureaucrat::upRate() {
 
 	if (_grade - 1 < _max_grade)
-		GradeTooHighException();
+		throw GradeTooHighException();
 	_grade--;
 }
 
 void	Bureaucrat::downRate() {
 	if (_grade + 1 > _min_grade)
-		GradeTooLowException();
+		throw GradeTooLowException();
 	_grade++;
 }
 

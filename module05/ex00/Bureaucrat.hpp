@@ -3,6 +3,7 @@
 
 #include <string>
 #include <iostream>
+#include <exception>
 
 class	Bureaucrat {
 	private:
@@ -24,8 +25,13 @@ class	Bureaucrat {
 
 		void	upRate();
 		void	downRate();
-		void	GradeTooLowException() const;
-		void	GradeTooHighException() const;
+		const char*	InvalidGrade() const;
+		class	GradeTooLowException : public std::exception {
+			const char* what() const throw();
+		};
+		class	GradeTooHighException : public std::exception {
+			const char* what() const throw();
+		};
 };
 
 std::ostream& operator<<(std::ostream& out, const Bureaucrat & guy);

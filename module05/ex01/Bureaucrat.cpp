@@ -16,30 +16,33 @@ size_t	Bureaucrat::getMaxGrade() const {return _max_grade;}
 size_t	Bureaucrat::getMinGrade() const {return _min_grade;}
 std::string const &  Bureaucrat::getName() const {return _name;}
 
-void	Bureaucrat::GradeTooHighException() const {
-	throw "grade is too high";
+const char*	Bureaucrat::GradeTooHighException::what() const {
+	return "grade is too high";
 }
 
-void	Bureaucrat::GradeTooLowException() const {
-	throw "grade is too low";
+const char*	Bureaucrat::GradeTooLowException::what() const {
+	return "grade is too low";
 }
+
+const char* Bureaucrat::InvalidGrade::what() const {
+	return "invalid grade";
 
 void	Bureaucrat::setGrade(size_t grade) {
 	if (grade > _min_grade && grade < _max_grade)
-		throw "ivalid grade";
+		InvalidGrade();
 	_grade = grade;
 }
 
 void	Bureaucrat::upRate() {
 
 	if (_grade - 1 < _max_grade)
-		GradeTooHighException();
+		throw GradeTooHighException();
 	_grade--;
 }
 
 void	Bureaucrat::downRate() {
 	if (_grade + 1 > _min_grade)
-		GradeTooLowException();
+		throw GradeTooLowException();
 	_grade++;
 }
 

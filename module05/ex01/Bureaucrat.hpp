@@ -29,8 +29,9 @@ class	Bureaucrat {
 
 		void	upRate();
 		void	downRate();
-		void	GradeTooLowException() const;
-		void	GradeTooHighException() const;
+		const char*	InvalidGrade() const;
+		const char*	GradeTooLowException() const;
+		const char*	GradeTooHighException() const;
 
 		void	signForm(Form & form);
 };

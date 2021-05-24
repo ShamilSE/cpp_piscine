@@ -3,37 +3,28 @@
 int main(void) {
 	Bureaucrat	tom("Tom");
 
-	try {tom.setGrade(50);}
-	catch (...) {}
+	//---------------------------------//
+	tom.setGrade(50);
 	try
 	{
 		tom.upRate();
 		std::cout << tom.getGrade() << std::endl;
 	}
-	catch (const char* error)
+	catch (std::exception & e)
 	{
-		std::cerr << error << std::endl;
+		std::cerr << e.what() << std::endl;
 	}
 	//---------------------------------//
-	try {tom.setGrade(1);}
-	catch (...) {}
+	tom.setGrade(1);
 	try
 	{
 		tom.upRate();
 	}
-	catch (const char* error)
+	catch (std::exception & e)
 	{
-		std::cerr << error << std::endl;
+		std::cerr << e.what() << std::endl;
 	}
 	//---------------------------------//
-	try
-	{
-		tom.setGrade(0);
-	}
-	catch (const char* error)
-	{
-		std::cerr << error << std::endl;
-	}
 	std::cout << tom;
 	return 0;
 }
