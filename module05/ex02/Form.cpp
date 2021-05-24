@@ -1,6 +1,14 @@
 #include "Form.hpp"
 
-Form::Form(std::string name): _name(name), _is_signed(false) {}
+Form::Form(std::string name): _name(name) {}
+
+Form::Form(std::string name, size_t grade, size_t execute_grade)
+:
+	_name(name),
+	_grade(grade),
+	_execute_grade(execute_grade),
+	_is_signed(false)
+{}
 
 Form::Form(const Form & other) {
 	*this = other;
@@ -9,14 +17,13 @@ Form::Form(const Form & other) {
 Form& Form::operator=(const Form & other) {
 	_name = other._name;
 	_is_signed = other._is_signed;
-	_grade = other._grade;
-	_execute_grade = other._execute_grade;
 	return *this;
 }
 
 std::string	Form::getName() const {return _name;}
 bool		Form::getIsSigned() const {return _is_signed;}
 size_t		Form::getGrade() const {return _grade;}
+size_t		Form::getExecuteGrade() const {return _execute_grade;}
 void	Form::setGrade(size_t grade) {_grade = grade;}
 
 const char* Form::GradeTooHighException::what() const throw() {

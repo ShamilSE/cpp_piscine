@@ -31,19 +31,6 @@ void	Bureaucrat::setGrade(size_t grade) {
 	_grade = grade;
 }
 
-void	Bureaucrat::signForm(Form & form) {
-	if (_grade <= form.getGrade())
-	{
-		form.beSigned(*this);
-		std::cout << _name << " signs " << form.getName();
-	}
-	else {
-		std::cout << _name << " cannot sign " << form.getName() <<
-			" because beraucrat has too low grade";
-	}
-	std::cout << std::endl;
-}
-
 void	Bureaucrat::upRate() {
 
 	if (_grade - 1 < _max_grade)

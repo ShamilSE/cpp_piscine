@@ -15,7 +15,7 @@ int main(void) {
 	}
 	catch (std::exception & e)
 	{
-		std::cout << e.what() << std::endl;
+		std::cerr << e.what() << std::endl;
 	}
 	//---------------------------------//
 	try {tom.setGrade(10);}
@@ -26,12 +26,35 @@ int main(void) {
 	}
 	catch (std::exception & e)
 	{
-		std::cout << e.what() << std::endl;
+		std::cerr << e.what() << std::endl;
 	}
 	//---------------------------------//
 	try {tom.setGrade(0);}
 	catch (const char* e) {
 		std::cout << e << std::endl;
 	}
+	//---------------------------------//
+	try {tom.setGrade(4);}
+	catch(...) {}
+	try
+	{
+		tom.signForm(passport);
+	}
+	catch (std::exception & e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
+	//---------------------------------//
+	try {tom.setGrade(100);}
+	catch (...) {}
+	try
+	{
+		tom.signForm(passport);
+	}
+	catch (std::exception & e)
+	{
+		std::cerr << e.what();
+	}
+	//---------------------------------//
 	return 0;
 }

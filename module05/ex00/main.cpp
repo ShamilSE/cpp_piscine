@@ -8,7 +8,7 @@ int main(void) {
 	try
 	{
 		tom.upRate();
-		std::cout << tom.getGrade() << std::endl;
+		std::cerr << tom.getGrade() << std::endl;
 	}
 	catch (std::exception & e)
 	{
