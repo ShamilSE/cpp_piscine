@@ -1,6 +1,7 @@
 #include "Bureaucrat.hpp"
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
 int main(void) {
 	Form *passport = new ShrubberyCreationForm("passport");
@@ -45,5 +46,23 @@ int main(void) {
 		std::cerr << e.what() << std::endl;
 	}
 	//---------------------------------//
+	Form*	pardon = new  PresidentialPardonForm;
+	try
+	{
+		fedor->signForm(*pardon);
+	}
+	catch (std::exception & e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
+	//---------------------------------//
+	try
+	{
+		pardon->execute(*fedor);
+	}
+	catch (std::exception & e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
 	return 0;
 }
