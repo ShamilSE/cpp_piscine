@@ -2,7 +2,7 @@
 
 PresidentialPardonForm::PresidentialPardonForm()
 :
-	Form("Presidential Pardon Form", 25, 5)
+	Form("presidential", 25, 5)
 {}
 
 PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm & other) 

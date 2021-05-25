@@ -1,10 +1,12 @@
 NAME = a.out
 
 SRC = main.cpp Bureaucrat.cpp Form.cpp ShrubberyCreationForm.cpp \
-	RobotomyRequestForm.cpp PresidentialPardonForm.cpp
+	RobotomyRequestForm.cpp PresidentialPardonForm.cpp \
+	Intern.cpp
 
 INC = Bureaucrat.hpp Form.hpp ShrubberyCreationForm.hpp \
-	RobotomyRequestForm.hpp PresidentialPardonForm.hpp
+	RobotomyRequestForm.hpp PresidentialPardonForm.hpp \
+	Intern.hpp
 
 CFLAGS = -Wall -Wextra -Werror
 

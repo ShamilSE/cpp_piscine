@@ -1,8 +1,8 @@
 #include "RobotomyRequestForm.hpp"
 
-RobotomyRequestForm::RobotomyRequestForm(std::string name)
+RobotomyRequestForm::RobotomyRequestForm()
 :
-	Form(name, 72, 45)
+	Form("robotomy", 72, 45)
 {}
 
 RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm & other)
