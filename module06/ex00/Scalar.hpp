@@ -20,7 +20,14 @@ class	Scalar {
 		Scalar& operator=(const Scalar & other);
 		~Scalar() {}
 
+		std::string	getRaw() const;
+		char	getC() const;
+		int		getI() const;
+		float	getF() const;
+		double	getD() const;
 
+		void	toChar(std::string);
+		void	toInt(std::string);
 };
 
 #endif
