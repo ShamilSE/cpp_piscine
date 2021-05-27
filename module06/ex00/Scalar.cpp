@@ -1,16 +1,13 @@
 #include "Scalar.hpp"
 
-Scalar::Scalar(std::string raw): _raw(raw) {
-	toChar(_raw);
-	toInt(_raw);
-}
+Scalar::Scalar(std::string raw): _raw(raw) {}
 
-void	Scalar::toChar(std::string raw) {
+void	Scalar::printChar() {
 	int		code;
 
 	std::cout << "char: ";
-	if (raw.size() == 1 && !std::isdigit(_raw[0])) {
-		_c = raw[0];
+	if (_raw.size() == 1 && !std::isdigit(_raw[0])) {
+		_c = _raw[0];
 		std::cout << "'" <<  _c << "'" << std::endl;
 	}
 	else {
@@ -33,8 +30,52 @@ void	Scalar::toChar(std::string raw) {
 	}
 }
 
-void	Scalar::toInt(std::string raw) {
-	
+void	Scalar::printInt() {
+	std::cout << "int: ";
+	try
+	{
+		_i = stoi(_raw);
+		std::cout << _i << std::endl;
+	}
+	catch (std::exception & e)
+	{
+		std::cout << "impossible" << std::endl;
+	}
+}
+
+void	Scalar::printFloat() {
+	std::cout << "float ";
+
+	float code;
+	try
+	{
+		code = stof(_raw);
+		std::cout << code;
+	}
+	catch (std::exception & e)
+	{
+		std::cout << "impossible" << std::endl;
+	}
+	if (!(code - round(code)))
+		std::cout << ".0";
+	std::cout << "f" << std::endl;
+}
+
+void	Scalar::printDouble() {
+	std::cout << "double: ";
+	double code;
+	try
+	{
+		code = stod(_raw);
+		std::cout << code;
+	}
+	catch (std::exception & e)
+	{
+		std::cout << "impossible";
+	}
+	if (!(code - round(code)))
+		std::cout << ".0";
+	std::cout << std::endl;
 }
 
 Scalar::Scalar(const Scalar & other) {

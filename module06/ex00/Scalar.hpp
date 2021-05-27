@@ -3,6 +3,7 @@
 
 #include <string>
 #include <iostream>
+#include <tgmath.h>
 
 class	Scalar {
 	private:
@@ -26,8 +27,10 @@ class	Scalar {
 		float	getF() const;
 		double	getD() const;
 
-		void	toChar(std::string);
-		void	toInt(std::string);
+		void	printChar();
+		void	printInt();
+		void	printFloat();
+		void	printDouble();
 };
 
 #endif

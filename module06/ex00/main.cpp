@@ -7,8 +7,11 @@ int main(int argc, char** argv) {
 	}
 
 	Scalar	scalar(argv[1]);
-	// std::cout << scalar.getC() << std::endl;
-	
 
+	scalar.printChar();
+	scalar.printInt();
+	scalar.printFloat();
+	scalar.printDouble();
+	
 	return 0;
 }
