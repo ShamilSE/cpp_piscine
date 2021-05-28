@@ -15,6 +15,7 @@ void	nullify(T el) {
 int	main(void) {
 	char	c_array[5] = {'a', 'b', 'c', 'd', 'e'};
 	int		i_array[5] = {1, 2, 3, 4, 5};
+	double  d_array[5] = {1.1, 2.1, 3.1, 4.1, 5.2};
 
 	//------------------------------------------//
 	std::cout << c_array << std::endl;
@@ -29,5 +30,12 @@ int	main(void) {
 		std::cout << i_array[i];
 	std::cout << std::endl;
 	//------------------------------------------//
+	for (int i = 0; i < 5; i++)
+		std::cout << d_array[i];
+	iter(d_array, 5, nullify);
+	std::cout << std::endl;
+	for (int i = 0; i < 5; i++)
+		std::cout << d_array[i];
+	std::cout << std::endl;
 	return 0;
 }

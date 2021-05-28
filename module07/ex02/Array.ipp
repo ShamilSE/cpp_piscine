@@ -12,7 +12,11 @@ Array<T>::Array(size_t n): _n(n) {
 }
 
 template <typename T>
-Array<T>::Array(const Array<T>& other) {*this = other;}
+Array<T>::Array(const Array<T>& other) {
+	_n = other._n;
+	_data = new T[_n];
+	*this = other;
+}
 
 template <typename T>
 Array<T> &Array<T>::operator=(const Array & other) {
@@ -39,7 +43,9 @@ T& Array<T>::operator[](size_t index) {
 }
 
 template <typename T>
-Array<T>::~Array() {delete _data;}
+Array<T>::~Array() {
+	delete _data;
+	}
 
 template <typename T>
 void	Array<T>::nullify(T el) {el = 0;}
