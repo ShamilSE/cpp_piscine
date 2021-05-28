@@ -24,7 +24,6 @@ class	Array {
 			const char* what() const throw();
 		};
 
-		void	nullify(T el);
 		void	iter(void(a)(T&));
 
 		size_t	size() const;

@@ -4,11 +4,12 @@ Array<T>::Array(): _n(0) {
 }
 
 template <typename T>
+void	nullify(T el) {el = 0;}
+
+template <typename T>
 Array<T>::Array(size_t n): _n(n) {
 	_data = new T[_n];
-	for (size_t i = 0; i < _n; i++)
-		_data[i] = 0;
-	// Array<T>::iter(Array<T>::nullify);
+	Array<T>::iter(nullify);
 }
 
 template <typename T>
@@ -43,19 +44,13 @@ T& Array<T>::operator[](size_t index) {
 }
 
 template <typename T>
-Array<T>::~Array() {
-	delete _data;
-	}
-
-template <typename T>
-void	Array<T>::nullify(T el) {el = 0;}
+Array<T>::~Array() {delete _data;}
 
 template <typename T>
 void	Array<T>::iter(void(a)(T&)) {
 	for (size_t i = 0; i < _n; i++)
 		a(_data[i]);
 }
-
 
 template <typename T>
 size_t	Array<T>::size() const {return _n;}

@@ -1,5 +1,7 @@
 #include "Array.hpp"
 
+
+
 int main(void) {
 	// test deep copying
 	// test returned item by index
@@ -7,6 +9,8 @@ int main(void) {
 	//------------------------------//
 	Array<int>	array(3);
 	Array<char>	array3(3);
+
+	std::cout << array[0] << std::endl;
 	array[0] = 1;
 	array[1] = 2;
 	array[2] = 3;
