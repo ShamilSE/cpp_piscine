@@ -1,6 +1,6 @@
 NAME = a.out
 SRC = main.cpp
-INC = Array.hpp
+INC = Array.hpp Array.ipp
 
 CFLAGS = -Wall -Wextra -Werror
 
