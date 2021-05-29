@@ -1,7 +1,7 @@
 NAME = a.out
 SRC = main.cpp
 INC = easyfind.hpp
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 all: $(NAME)
 
