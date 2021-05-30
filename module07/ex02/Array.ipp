@@ -13,16 +13,14 @@ Array<T>::Array(size_t n): _n(n) {
 }
 
 template <typename T>
-Array<T>::Array(const Array<T>& other) {
-	_n = other._n;
-	_data = new T[_n];
+Array<T>::Array(const Array<T>& other): _n(other._n), _data(nullptr) {
 	*this = other;
 }
 
 template <typename T>
 Array<T> &Array<T>::operator=(const Array & other) {
 	_n = other._n;
-	if (this != &other) {
+	if (this != &other && _data != nullptr) {
 		delete _data;
 		_data = new T[_n];
 		for (size_t i = 0; i < _n; i++)
