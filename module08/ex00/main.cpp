@@ -11,18 +11,18 @@ int	main(void) {
 		easyfind(a, 4);
 		std::cout << "found 4" << std::endl;
 	}
-	catch (const char* e)
+	catch (std::exception & e)
 	{
-		std::cerr << e << std::endl;
+		std::cerr << e.what() << std::endl;
 	}
 	//------------------------------------//
 	try
 	{
 		easyfind(a, 7);
 	}
-	catch (const char* e)
+	catch (std::exception & e)
 	{
-		std::cerr << e << std::endl;
+		std::cerr << e.what() << std::endl;
 	}
 	//------------------------------------//
 	return 0;
