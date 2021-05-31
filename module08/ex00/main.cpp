@@ -1,7 +1,7 @@
 #include "easyfind.hpp"
 
 int	main(void) {
-	std::vector<int>	a;
+	std::list<int>	a;
 	a.push_back(4);
 	a.push_back(5);
 

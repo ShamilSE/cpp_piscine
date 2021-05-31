@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <vector>
+#include <list>
 #include <exception>
 
 /**
@@ -26,8 +27,8 @@ class	ValueNotFound : public std::exception {
  * in the container.
  */
 template <typename T>
-std::vector<int>::const_iterator	easyfind(T& a, int b) {
-	std::vector<int>::const_iterator it = std::find(a.begin(), a.end(), b);
+typename T::const_iterator	easyfind(T& a, int b) {
+	typename T::const_iterator it = std::find(a.begin(), a.end(), b);
 	if (it == a.end())
 		throw ValueNotFound();
 	return it;
