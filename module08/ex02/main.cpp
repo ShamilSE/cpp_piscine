@@ -32,6 +32,9 @@ int	main(void) {
 		std::cout << *it << std::endl;
 		++it;
 	}
+	std::cout << "========================================" << std::endl;
+	while (--ite != mstack.begin())
+		std::cout << *ite << std::endl;
 
 	std::stack<int> s(mstack);
 	return 0;
