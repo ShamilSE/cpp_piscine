@@ -9,7 +9,7 @@ Fixed::Fixed():  _value(0) {
 
 Fixed::Fixed(const int i) {
 	std::cout << "Int constructor called" << std::endl;
-	_value = i * 256;
+	_value = i << 8;
 }
 
 Fixed::Fixed(const float i) {
