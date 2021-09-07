@@ -9,12 +9,12 @@ Fixed::Fixed():  _value(0) {
 
 Fixed::Fixed(const int i) {
 	std::cout << "Int constructor called" << std::endl;
-	_value = i * 256;
+	_value = i * (1 << _fractorial);
 }
 
 Fixed::Fixed(const float i) {
 	std::cout << "Float constructor called" << std::endl;
-	this->_value = roundf(i * 256);
+	this->_value = roundf(i * (1 << _fractorial));
 }
 
 Fixed::~Fixed() {
@@ -35,11 +35,11 @@ Fixed& Fixed::operator=(const Fixed& src) {
 
 
 float	Fixed::toFloat(void) const {
-	return static_cast<float>(_value ) / 256;
+	return static_cast<float>(_value ) / (1 << _fractorial);
 }
 
 int		Fixed::toInt(void) const {
-	return _value / 256;
+	return _value / (1 << _fractorial);
 }
 
 
